@@ -6,11 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+recetas = [
+  { nombre: 'Ajoatao',
+    descripcion: "Paso 1: ...\nPaso 2: ...\nPaso 3: ...\nY esto es todo. A probarla.",
+    puntuacion: 4,
+    publica: true
+  },
+  {
+    nombre: 'Escalicabra',
+    descripcion: "Paso 1: ...\nPaso 2: ...\nPaso 3: ...\nY esto es todo. A probarla.",
+    puntuacion: 8,
+    publica: true
+  },
+  {
+    nombre: 'Solomillo encabramelizado',
+    descripcion: "Paso 1: ...\nPaso 2: ...\nPaso 3: ...\nY esto es todo. A probarla.",
+    puntuacion: 10,
+    publica: false
+  }
+]
 
-categorias = ['Desconocida', 'Verdura', 'Carne', 'Pescado', 'Lácteo', 'Legumbre', 'Especias', 'Fruta']
-
-Categoria.create(categorias.map{ |cat| {nombre: cat} })
-
-ingredientes = ['Leche', 'Tomate', 'Pechuga de pollo', 'Salmón', 'Cebolla', 'Oregano', 'Solomillo de cerdo', 'Pimiento verde', 'Berenjena', 'Lubina', 'Queso de cabra', 'Garbanzos', 'Oregano', 'Platano', 'Naranja', 'Calamares']
-
-Ingrediente.create(ingredientes.map{ |ing| {nombre: ing} })
+Receta.create(recetas)

@@ -10,6 +10,10 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.uncountable %w( fish sheep )
   inflect.singular /^categorias$/i, 'categoria'
   inflect.plural /^categoria$/i, 'categorias'
+  inflect.singular /^recetas$/i, 'receta'
+  inflect.plural /^receta$/i, 'recetas'
+  inflect.singular /^ingredientes_recetas$/i, 'ingredientes_receta'
+  inflect.plural /^ingredientes_receta$/i, 'ingredientes_recetas'
 end
 
 # These inflection rules are supported but not enabled by default:
