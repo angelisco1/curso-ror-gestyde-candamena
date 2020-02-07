@@ -1,0 +1,9 @@
+<%= form_with :model => @categoria do |f| %>
+  <div>
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <%= f.submit :Guardar %>
+  <%= link_to :Volver, categorias_path %>
+<% end %>

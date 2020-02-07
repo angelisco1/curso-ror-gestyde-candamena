@@ -1,0 +1,14 @@
+<h2><%= @receta.nombre %> (<%= @receta.puntuacion %>  <%= emoji_puntuacion @receta.puntuacion %>)</h2>
+<p>Subida por  <%= @receta.usuario.username %></p>
+<%= link_to 'Volver', recetas_path %>
+<h3>Ingredientes:</h3>
+<ul>
+  <% @receta.ingredientes_recetas.each do |ing_rec| %>
+    <li>
+      <%= ing_rec.ingrediente.nombre %>: <%= ing_rec.cantidad %> (<%= ing_rec.ingrediente.categoria.nombre %>)
+    </li>
+  <% end %>
+</ul>
+<hr>
+<h3>Descripción:</h3>
+<p><%= simple_format(@receta.descripcion) %></p>
