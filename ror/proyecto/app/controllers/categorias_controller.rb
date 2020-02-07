@@ -13,24 +13,40 @@ class CategoriasController < ApplicationController
 
   def create
     # Categoria.create()
-
-    if Categoria.create(nombre: params[:categoria][:nombre])
-      redirect_to categorias_path
+    # puts "CAT_PARAMS: #{categoria_params}"
+    if Categoria.create(categoria_params)
+      redirect_to(categorias_path)
     else
       puts "Hay algo mal..."
     # render :new
     end
-
     # puts "Creando categoria #{params[:categoria][:nombre]}"
   end
 
   def edit
+    @categoria = Categoria.find(params[:id])
   end
 
   def update
+    @categoria = Categoria.find(params[:id])
+    # byebug
+    if @categoria.update(categoria_params)
+      redirect_to(categorias_path)
+    else
+      puts "Hay algo mal..."
+    # render :new
+    end
   end
 
   def destroy
+    @categoria = Categoria.find(params[:id])
+    @categoria.destroy
+    redirect_to(categorias_path)
   end
 
+  private
+
+    def categoria_params
+      params.require(:categoria).permit(:nombre)
+    end
 end

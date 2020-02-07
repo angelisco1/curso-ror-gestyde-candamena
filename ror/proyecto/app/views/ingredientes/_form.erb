@@ -1,0 +1,21 @@
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @ingrediente) do |f| %>
+  <div>
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+  <div>
+    <%= f.label :categoria %>
+    <%= f.select :categoria_id, categorias_select_options(@categorias) %>
+  </div>
+  <%= f.submit :Guardar %>
+  <%= link_to :Volver, ingredientes_path %>
+<% end %>
